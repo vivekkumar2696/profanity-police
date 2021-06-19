@@ -7,7 +7,12 @@ class YoutubeTranscript:
     def get_original_transcript(self, language_code = 'en'):
         """
             Returns the transcript in the required language if the video owner has added
-            else it returns None
+            None if not found
+
+            :param language_code: Language code for which the transcript needs to be generated
+
+            :return: List of dictionaries
+                     The dictionary consists of 3 keys, i.e. text, start, duration
         """
         transcript_list = YouTubeTranscriptApi.list_transcripts(self.video_id)
         for transcript in transcript_list:
@@ -19,6 +24,12 @@ class YoutubeTranscript:
     def get_transcript(self, language_code = 'en'):
         """
             Returns the transcript in the required lanugage either original or translated
+            None if not found
+
+            :param language_code: Language code for which the transcript needs to be generated
+
+            :return: List of dictionaries
+                     The dictionary consists of 3 keys, i.e. text, start, duration
         """
         output = {"transcript": None, "translated": False, "original": False}
 

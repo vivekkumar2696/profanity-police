@@ -9,7 +9,7 @@ if not transcript:
     print("Transcript not found")
 else:
     print(transcript["transcript"][0])
-    swear_words_in_transcript = checker.swear_word_check(transcript["transcript"], "hi")
+    swear_words_in_transcript = checker.check_swear_word(transcript["transcript"], "hi")
     print(swear_words_in_transcript)
     # with open("z", "w+") as f:
     #     for line in swear_words_in_transcript:
