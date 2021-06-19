@@ -1,6 +1,13 @@
 # swear-word-checker
 Python library to check for swear words in a youtube video
 
+Install package using pip
+
+```
+ pip install git+ssh://git@github.com/vivekkumar2696/swear-word-checker.git
+```
+
+Sample python code
 ```
 from profanity_police.checker import Checker
 from profanity_police.youtube import YoutubeTranscript
