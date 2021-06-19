@@ -25,6 +25,21 @@ class Checker:
         except Exception as e:
             return None
 
+    def _pre_check_transcript_struct(self, transcript):
+        """
+            Check whether the transcript dictionaries has "text" key
+
+            :param transcript: List of dictionaries
+        """
+        try:
+            for line in transcript:
+                if "text" in line:
+                    pass
+                else:
+                    return False
+        except Exception as e:
+            return False
+
     def check_swear_word(self, transcript, language_code = 'en', encode = False):
         """
             Check for swear words in a particular transcript or custom text
@@ -38,20 +53,29 @@ class Checker:
                     Contains the same dictionary which was passed along with the following keys
                     swear_words
         """
+
+        if self._pre_check_transcript_struct(transcript):
+            return None
+
         swear_words = self.get_swear_words(language_code)
 
-        swear_words_in_transcript = []
+        if swear_words:
+            swear_words_in_transcript = []
 
-        for line in transcript:
-            text = line['text'].lower()
-            line_words = text.split()
-            found = []
-            for word in line_words:
-                word = word.rstrip('\n')
-                if swear_words.get(word):
-                    found.append(word)
-            if len(found):
-                line["found"] = found
-                swear_words_in_transcript.append(line)
+            for line in transcript:
+                if not line['text']:
+                    continue
+                text = line['text'].lower()
+                line_words = text.split()
+                found = []
+                for word in line_words:
+                    word = word.rstrip('\n')
+                    if swear_words.get(word):
+                        found.append(word)
+                if len(found):
+                    line["found"] = found
+                    swear_words_in_transcript.append(line)
 
-        return swear_words_in_transcript
+            return swear_words_in_transcript
+        else:
+            return None

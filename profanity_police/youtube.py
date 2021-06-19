@@ -36,7 +36,6 @@ class YoutubeTranscript:
         try:
             transcript_list = YouTubeTranscriptApi.list_transcripts(self.video_id)
             for transcript in transcript_list:
-                print(transcript.language_code)
                 if transcript.language_code == language_code:
                     output["transcript"] = transcript.fetch()
                     output["translated"] = False
