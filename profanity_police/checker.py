@@ -1,3 +1,7 @@
+from profanity_police.data.data import *
+
+import re
+
 class Checker:
     def __init__(self):
         pass
@@ -8,21 +12,16 @@ class Checker:
 
             :param language_code: Language code for which the transcript needs to be generated
 
-            :return: List of all the swear words
+            :return: dictionary of all the swear words with static value of 1 for all
         """
         words = []
-        print(language_code)
         if language_code:
-            language_code = language_code.split(r"[^a-zA-Z0-9\s]")[0]
-            print(language_code)
+            language_code = re.split(r"[^a-zA-Z0-9\s]", language_code)[0]
         else:
             language_code = "en"
 
         try:
-            with open('./profanity_police/data/{0}'.format(language_code),'r') as f:
-                for line in f:
-                    words.append(line)
-            return words
+            return eval(language_code)
         except Exception as e:
             return None
 
@@ -43,22 +42,16 @@ class Checker:
 
         swear_words_in_transcript = []
 
-        # TODO: O(n3) Awful, improve this
-        # Convert the source data in a dictionary to make searching O(1)
         for line in transcript:
             text = line['text'].lower()
             line_words = text.split()
-            for swear_word in swear_words:
-                swear_word = swear_word.rstrip('\n')
-                for word in line_words:
-                    word = word.rstrip('\n')
-                    if encode:
-                        if swear_word.encode("utf-8") in word.encode("utf-8"):
-                            swear_words_in_transcript.append(line)
-                            break
-                    else:
-                        if swear_word == word:
-                            swear_words_in_transcript.append(line)
-                            break
+            found = []
+            for word in line_words:
+                word = word.rstrip('\n')
+                if swear_words.get(word):
+                    found.append(word)
+            if len(found):
+                line["found"] = found
+                swear_words_in_transcript.append(line)
 
         return swear_words_in_transcript
