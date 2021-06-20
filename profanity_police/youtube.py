@@ -1,5 +1,7 @@
 from youtube_transcript_api import YouTubeTranscriptApi
 
+from profanity_police.exceptions import InvalidYoutubeURLError
+
 from urllib import parse
 
 class YoutubeTranscript:
@@ -9,15 +11,28 @@ class YoutubeTranscript:
 
             :param video_id: Video ID of URL
         """
-        if not video_id and not url:
+        if not video_id and (not url or not self.extract_video_id(url)):
             # raise exception
-            pass
+            raise(InvalidYoutubeURLError("Not a valid Youtube URL or video ID"))
 
         if video_id:
             self.video_id = video_id
 
         if url:
             self.video_id = self.extract_video_id(url)
+
+    def get_original_languages(self):
+        """
+            Returns the lanugages which the owner has uploaded
+            None if not found
+
+            :return: List of string
+        """
+        transcript_list = YouTubeTranscriptApi.list_transcripts(self.video_id)
+        langs = []
+        for transcript in transcript_list:
+            langs.append(transcript.language_code)
+        return langs
 
     def get_original_transcript(self, language_code = 'en'):
         """
