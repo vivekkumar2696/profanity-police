@@ -3,6 +3,7 @@ from profanity_police.youtube import YoutubeTranscript
 from profanity_police.exceptions import TranscriptNotFoundError, InvalidArgumentError
 
 from profanity_police.srt_extractor import SrtExtractor
+from profanity_police.txt_extractor import TextExtractor
 
 class TranscriptChecker():
 
@@ -58,6 +59,11 @@ class TranscriptChecker():
         if source == "file":
             if file_type == "srt":
                 transcript = SrtExtractor().extract_text(file_path)
+                checker = Checker()
+                swear_words_in_transcript = checker.check_swear_word(transcript, language_code)
+                return swear_words_in_transcript
+            elif file_type == "txt":
+                transcript = TextExtractor().extract_text(file_path)
                 checker = Checker()
                 swear_words_in_transcript = checker.check_swear_word(transcript, language_code)
                 return swear_words_in_transcript

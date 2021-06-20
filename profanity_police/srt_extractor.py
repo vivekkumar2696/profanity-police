@@ -1,12 +1,25 @@
 import pysrt
 
 class SrtExtractor():
-    def __init__(self):
-        pass
-
     def extract_text(self, file, encoding = None):
         """
             Extract text from an SRT file
+
+            :param file: file_path of SRT file
+            :param encoding: Encoding if present
+
+            :return: List of dictionary in following keys
+                    "text": Transcript text
+                    "start": Start time in seconds
+                    "end": End time in seconds
+                    e.g. 
+                    [
+                        {
+                            "text": "Hello",
+                            "start": 2,
+                            "end": 4
+                        }
+                    ] 
         """
         if encoding:
             subs = pysrt.open(file, encoding = encoding)
