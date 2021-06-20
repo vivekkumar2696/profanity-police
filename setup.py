@@ -6,12 +6,24 @@ with open('requirements.txt') as f:
 setup(
     name = 'profanity_police',
     version = '1.0.0',
-    description = 'A python library to check for swear words in a youtube video',
-    url = 'git@github.com:vivekkumar2696/swear-word-checker.git',
+    description = 'A python library to check for swear words in a youtube video, file or text',
+    url = 'https://github.com/vivekkumar2696/profanity-police',
     author = 'Vivek Kumar',
     author_email = 'kumar.vivek2696@gmail.com',
-    license = 'unlicense',
+    license = 'MIT',
     packages = ['profanity_police'],
     zip_safe = False,
-    install_requires = required
+    install_requires = required,
+    classifiers=[
+        'Development Status :: 3 - Alpha',# Chose either "3 - Alpha", "4 - Beta" or "5 - Production/Stable" as the current state of your package
+        'Intended Audience :: Developers',
+        'Topic :: Software Development :: Build Tools',
+        'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
+    ],
 )
