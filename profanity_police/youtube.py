@@ -24,7 +24,6 @@ class YoutubeTranscript:
     def get_original_languages(self):
         """
             Returns the lanugages which the owner has uploaded
-            None if not found
 
             :return: List of string
         """
@@ -32,6 +31,18 @@ class YoutubeTranscript:
         langs = []
         for transcript in transcript_list:
             langs.append(transcript.language_code)
+        return langs
+    
+    def get_translation_languages(self):
+        """
+            Returns the lanugages to which transcript can be translated
+
+            :return: List of string
+        """
+        transcript_list = YouTubeTranscriptApi.list_transcripts(self.video_id)
+        langs = []
+        for transcript in transcript_list:
+            return transcript.translation_languages
         return langs
 
     def get_original_transcript(self, language_code = 'en'):
