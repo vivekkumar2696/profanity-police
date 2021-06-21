@@ -63,7 +63,7 @@ Get youtube transcript for a video
 ```python
 from profanity_police.youtube import YoutubeTranscript
 
-y_transcript = YoutubeTranscript(url = "https://www.youtube.com/watch?v=Vev2ybF2Z6g&ab_channel=AllIndiaBakchod")
+y_transcript = YoutubeTranscript(url = "https://www.youtube.com/watch?v=Vev2ybF2Z6g")
 # Get the original transcripts available for a video
 y_transcript.get_original_languages()
 
@@ -71,13 +71,14 @@ y_transcript.get_original_languages()
 y_transcript.get_translation_languages()
 
 transcript_en = y_transcript.get_transcript(language_code = "en-GB")
+transcript_fr = y_transcript.get_transcript(language_code = "fr")
 transcript_hi = y_transcript.get_transcript(language_code = "hi")
 ```
 
 ## Custom File
 
 ### SRT file
-```
+```python
 from profanity_police.transcript_checker import TranscriptChecker
 
 checker = TranscriptChecker()
@@ -87,7 +88,7 @@ print(swear_phrases)
 
 ### Text file
 
-```
+```python
 from profanity_police.transcript_checker import TranscriptChecker
 
 checker = TranscriptChecker()
@@ -103,6 +104,7 @@ print(swear_phrases)
 from profanity_police.checker import Checker
 checker = Checker()
 transcript = [{"text": "What is your name?"}, {"text": "shut the fuck up"}]
+language_code = "en"
 # `transcript` needs to be a list of dictionaries with one mandatory key - `text` 
 swear_words_in_transcript = checker.check_swear_word(transcript, language_code)
 ```             
