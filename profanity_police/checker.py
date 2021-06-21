@@ -1,4 +1,4 @@
-from profanity_police.data.data import *
+from profanity_police.data import *
 
 import re
 
