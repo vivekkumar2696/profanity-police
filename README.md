@@ -8,7 +8,7 @@ This is a python API which allows you to check for swear words in a youtube vide
 
 Install package using pip
 ```
-pip install git+ssh://git@github.com/vivekkumar2696/profanity-police.git
+pip install profanity-police
 ```
 If you want to use it from source, you'll have to install the dependencies manually:
 ```
