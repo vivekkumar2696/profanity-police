@@ -1,7 +1,7 @@
 # Profanity Police
-Python library to check for swear words in a youtube video or text.
+This is a python API which allows you to check for swear words in a youtube video, srt file, text file, custom source with multi language support. There are additional features like getting youtube transcript of a video, srt parser etc.
 
-[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/vivekkumar2696?locale.x=en_GB)[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
 
 
 # Install
@@ -137,3 +137,9 @@ For swear word checker
 
 For youtube translation:-
 All languages supported by youtube.
+
+If you liked it and it was helpful, then
+<a href="https://www.buymeacoffee.com/vivekkumar2696" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 174px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
+# License
+MIT
