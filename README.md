@@ -1,7 +1,8 @@
 # Profanity Police
 This is a python API which allows you to check for swear words in a youtube video, srt file, text file, custom source with multi language support. There are additional features like getting youtube transcript of a video, srt parser etc.
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/vivekkumar2696?locale.x=en_GB)[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)
+[![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)  [![image](https://img.shields.io/pypi/v/profanity-police.svg)](https://pypi.org/project/profanity-police/) [![image](https://img.shields.io/pypi/pyversions/profanity-police.svg)](https://pypi.org/project/profanity-police/)
+
 
 
 # Install
