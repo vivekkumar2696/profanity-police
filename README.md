@@ -106,3 +106,21 @@ transcript = [{"text": "What is your name?"}, {"text": "shut the fuck up"}]
 # `transcript` needs to be a list of dictionaries with one mandatory key - `text` 
 swear_words_in_transcript = checker.check_swear_word(transcript, language_code)
 ```             
+
+## Languages
+
+For swear word checker
+
+| Name             | Code |
+| ---------------- | ---- |
+| [English](en)    | en   |
+| [French](fr)     | fr   |
+| [Hindi](hi)      | hi   |
+| [Italian](it)    | it   |
+| [Korean](ko)     | ko   |
+| [Portuguese](pt) | pt   |
+| [Russian](ru)    | ru   |
+| [Spanish](es)    | es   |
+
+For youtube translation:-
+All languages supported by youtube.
