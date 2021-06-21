@@ -99,13 +99,26 @@ print(swear_phrases)
 # Additional APIs
 
 ### Custom checker
-```
+```python
 from profanity_police.checker import Checker
 checker = Checker()
 transcript = [{"text": "What is your name?"}, {"text": "shut the fuck up"}]
 # `transcript` needs to be a list of dictionaries with one mandatory key - `text` 
 swear_words_in_transcript = checker.check_swear_word(transcript, language_code)
 ```             
+### SRT text Extractor
+```python
+from profanity_police.srt_extractor import SrtExtractor
+file_path = "sample_srt_files/panchayat_episode_3.srt"
+transcript = SrtExtractor().extract_text(file_path)
+"""
+transcript is a list of dictionary with the below format
+[
+    {"text": "what is your name?", "start": 10, "end": 12}
+]
+start and end are in seconds
+"""
+```
 
 ## Languages
 
