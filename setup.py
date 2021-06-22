@@ -5,7 +5,7 @@ with open('requirements.txt') as f:
 
 setup(
     name = 'profanity_police',
-    version = '0.1.0',
+    version = '1.0.0',
     description = 'This is a python API which allows you to check for swear words in a youtube video, srt file, text file, custom source with multi language support. There are additional features like getting youtube transcript of a video, srt parser etc.',
     url = 'https://github.com/vivekkumar2696/profanity-police',
     author = 'Vivek Kamal Kumar',
