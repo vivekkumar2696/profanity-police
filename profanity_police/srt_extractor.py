@@ -30,7 +30,8 @@ class SrtExtractor():
         for sub in subs:
             d = {}
             d["text"] = sub.text
-            d["start"] = sub.start.hours*3600 + sub.start.minutes*60 + sub.start.seconds
-            d["end"] = sub.end.hours*3600 + sub.end.minutes*60 + sub.end.seconds
+            d["start"] = sub.start.hours*3600 + sub.start.minutes*60 + sub.start.seconds + sub.start.milliseconds*0.001
+            print(sub.start, d["start"])
+            d["end"] = sub.end.hours*3600 + sub.end.minutes*60 + sub.end.seconds + sub.end.milliseconds*0.001
             output.append(d)
         return output
