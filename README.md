@@ -3,7 +3,9 @@ This is a python API which allows you to check for swear words in a youtube vide
 
 [![MIT license](http://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](http://opensource.org/licenses/MIT)  [![image](https://img.shields.io/pypi/v/profanity-police.svg)](https://pypi.org/project/profanity-police/) [![image](https://img.shields.io/pypi/pyversions/profanity-police.svg)](https://pypi.org/project/profanity-police/)
 
-
+[![Downloads](https://static.pepy.tech/badge/profanity-police/week)](https://pepy.tech/project/profanity-police)
+[![Downloads](https://static.pepy.tech/badge/profanity-police)](https://pepy.tech/project/profanity-police)
+[![Downloads](https://static.pepy.tech/badge/profanity-police/month)](https://pepy.tech/project/profanity-police)
 
 # Install
 
